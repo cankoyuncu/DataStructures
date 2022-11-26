@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <conio.h>
 #include <ctype.h>
 #define SIZE 100
@@ -32,7 +33,7 @@ void initialize_queue(queue *q){
     q -> front = q->rear = NULL;
 }
 
-typedef enum {false, true}boolean;
+typedef enum{false, true}boolean;
 
 boolean isEmpty_stack(stack *stk){
     return(stk->cnt==0);
@@ -56,7 +57,7 @@ void push(stack *stk, int c) {
 }
 int pop(stack *stk){
     if(!isEmpty_stack(stk)) {
-        struct node *temp = stk->top->next;
+        struct node *temp = stk->top;
         stk->top = stk->top->next;
         int x = temp -> data;
         free(temp);
@@ -110,8 +111,8 @@ int main(){
     gets(ifade);
 
     for(i=0; i != strlen(ifade); i++) {
-        if(isalpha(ifade[i])) { //isalpha 
-            enqueue(&q, tolower(ifade[i])); //tolower
+        if(isalpha(ifade[i])) { //isalpha: Fonksiyona geçirilen c parametre değerinin alfabede bulunan bir harf olup olmadığını kontrol eder.
+            enqueue(&q, tolower(ifade[i])); //tolower: Parametrede yer alan karakteri küçük harfe çevirerek, eğer küçük harf karşılığı yoksa aynı karakteri geri döndürür.
             push(&s, tolower(ifade[i]));
         }
     }
