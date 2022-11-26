@@ -30,17 +30,16 @@ void initialize_stack(stack *stk){
 
 void initialize_queue(queue *q){
     q -> cnt = 0;
-    q -> front = q->rear = NULL;
+    q -> front = NULL;
+    q -> rear = NULL;
 }
 
 typedef enum{false, true}boolean;
-
 boolean isEmpty_stack(stack *stk){
-    return(stk->cnt==0);
+    return(stk -> cnt == 0);
 }
-
 boolean isFull_stack(stack *stk){
-    return(stk->cnt == STACK_SIZE);
+    return(stk -> cnt == STACK_SIZE);
 }
 
 void push(stack *stk, int c) {
@@ -55,6 +54,7 @@ void push(stack *stk, int c) {
     else
         printf("Stack Dolu\n");
 }
+
 int pop(stack *stk){
     if(!isEmpty_stack(stk)) {
         struct node *temp = stk->top;
@@ -65,6 +65,7 @@ int pop(stack *stk){
         return x;
     }
 }
+
 int isEmpty_queue(queue *q) {
     return(q->cnt==0);
 }
@@ -80,9 +81,9 @@ void enqueue(queue *q, int x) {
         temp->data = x;
 
         if(isEmpty_queue(q))
-            q->front = q->rear = temp;
+            q -> front = q -> rear = temp;
         else
-            q->rear = q -> rear -> next = temp;
+            q -> rear = q -> rear -> next = temp;
         q->cnt++;
     }
 }
