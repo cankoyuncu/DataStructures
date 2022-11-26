@@ -111,7 +111,7 @@ int main(){
 
     for(i=0; i != strlen(ifade); i++) {
         if(isalpha(ifade[i])) { //isalpha 
-            enqueue(&q, tolower(ifade[i]));
+            enqueue(&q, tolower(ifade[i])); //tolower
             push(&s, tolower(ifade[i]));
         }
     }
@@ -125,7 +125,7 @@ int main(){
     if(mismatches == 1)
         printf("Girdiginiz ifade palindrom degildir.");
     else    
-        printf("Girdiniz ifade polindromdur.");
+        printf("Girdiniz ifade palindromdur.");
 
     getch();
     return 0;
