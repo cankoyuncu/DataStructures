@@ -56,3 +56,30 @@ void push(stack *stk, int c){
     else 
         printf("Stack Dolu!");
 }
+
+//stack'den düğüm silmek (pop)
+int pop(stack *stk) {
+    if(!isEmpty(stk)) {
+        struct node *temp = stk->top;
+        stk->top = stk->top->next;
+        int x = temp -> data;
+        free(temp);
+        stk->cnt--;
+        return x;
+    }
+}
+
+//stack'in en üstteki verisini bulmak
+
+int top(stack *stk) {
+    if(!isEmpty(stk)) {
+        return(stk->top->data);
+    }
+}
+
+//stack'e başlangıç değeri vermek
+
+void initialize(stack *stk){
+    stk->top = NULL;
+    stk->cnt = 0;
+}
