@@ -43,3 +43,16 @@ boolean isEmpty(stack *stk) {
 boolean isFull(stack *stk) {
     return(stk->cnt == STACK_SIZE);
 }
+
+//stack'e ekleme yapan fonksiyon
+void push(stack *stk, int c){
+    if(!isFull(stk)) {
+        struct node *temp = (struct node *)malloc(sizeof(struct node));
+        temp -> data = c;
+        temp -> next = stk ->top;
+        stk -> top = temp;
+        stk -> cnt++;
+    }
+    else 
+        printf("Stack Dolu!");
+}
