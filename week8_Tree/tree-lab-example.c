@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//leaf sayisini dugumlerin toplamini bulan fonk
-
 struct node{
 	int data;
 	struct node *left, *right;
@@ -10,13 +8,15 @@ struct node{
 
 typedef struct node BTREE;
 
+//leaf sayisini dugumlerin toplamini bulan fonksiyon
+
 int leafCount(BTREE *node){
 	if(node==NULL)
 		return 0;
 	else if(node->left==NULL && node->right==NULL)
 		return 1;
 	else 
-		return leafCount(node->left)+leafCount(node->right);
+		return leafCount(node->left) + leafCount(node->right);
 }
 
 BTREE *new_node(int data){
@@ -38,27 +38,28 @@ BTREE *insert(BTREE *root, int data){
 	return root;
 }
 
+//dugumlerin datalarinin toplami
+
 int sumBTREE(BTREE *root){
 	if(root=NULL)
 		return 0;
-	return (root->data + sumBTREE(root->left)+sumBTREE(root->right));
+	return (root->data + sumBTREE(root->left) + sumBTREE(root->right));
 }
 
-//agactaki herhangi bir dugumun derinligini hesaplamak
+//agactaki herhangi bir dugumun derinligini hesaplayan fonksiyon
 
 int find_depth(BTREE *root, int data){
 	if(root==NULL){
-		printf("there is no %d\n",data);
+		printf("There is no %d\n",data);
 		return -1000;
 	}
 	if(root->data==data) //bu durumda kok dugumun derinligi 0'dir.
 		return 0;
 	else if(data < root->data)
-		return 1+ find_depth(root->left,data);
+		return 1 + find_depth(root->left,data);
 	else 
-		return 1+ find_depth(root->right,data);
-	
-	
+		return 1 + find_depth(root->right,data);
+
 }
 
 //agacin yuksekligini bulan fonk
@@ -91,7 +92,6 @@ int main(){
 	printf("Leaf count on tree: %d\n",leafCount(myroot));
 	printf("Sum of data on tree: %d\n",sumBTREE(myroot));
 	printf("Depth of the given node: %d\n", find_depth(myroot,7));
-	
 	int height = tree_height(myroot);
 	printf("Height of tree:%d\n", height);
 	
@@ -99,8 +99,4 @@ int main(){
 	return 0;	
 	
 }
-
-
-
-
 
