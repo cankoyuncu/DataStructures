@@ -80,7 +80,21 @@ int tree_height(BTREE *root){
 	}
 }
 
-
+int main(){
+	BTREE *myroot = new_node(10);
+	myroot = insert(myroot,8);
+	myroot = insert(myroot,3);
+	myroot = insert(myroot,6);
+	myroot = insert(myroot,15);
+	myroot = insert(myroot,7);
+	myroot = insert(myroot,16);
+	myroot = insert(myroot,1);
+	myroot = insert(myroot,5);
+	
+	printf("Leaf count on tree: %d\n",leafCount(myroot));
+	
+	
+}
 
 
 
