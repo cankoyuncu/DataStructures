@@ -41,7 +41,7 @@ BTREE *insert(BTREE *root, int data){
 //dugumlerin datalarinin toplami
 
 int sumBTREE(BTREE *root){
-	if(root=NULL)
+	if(root==NULL)
 		return 0;
 	return (root->data + sumBTREE(root->left) + sumBTREE(root->right));
 }
@@ -88,11 +88,11 @@ int main(){
 	myroot = insert(myroot,1);
 	myroot = insert(myroot,5);
 	
-	printf("Leaf count on tree :%d\n",leafCount(myroot));
+	printf("Leaf count on tree : %d\n",leafCount(myroot));
 	printf("Sum of data on tree : %d\n",sumBTREE(myroot));
-	printf("Depth of the given node :%d\n",find_depth(myroot,6));
+	printf("Depth of the given node : %d\n",find_depth(myroot,6));
 	int height = tree_height(myroot);
-	printf("Height of tree :%d\n",height);
+	printf("Height of tree : %d\n",height);
 	
 	getch();
 	return 0;
