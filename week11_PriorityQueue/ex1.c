@@ -36,6 +36,36 @@ void print(pqueue *p){
     }
 }
 
+void swap(int *p,int *q)
+{
+    int tmp;
+    tmp = *p; 
+    *p=*q;    
+    *q=tmp;   
+}
+
+int delete(pqueue *p){
+    if(p->cnt==0){    
+        printf("Queue is empty");
+        return -100;
+    }else{
+        int key = p->A[1];
+        p->A[1]=p->A[p->cnt];
+        p->cnt--;
+        int iter = 1;
+        while(2*iter<=p->cnt && (p->A[iter]>p->A[2*iter] || p->A[iter]>p->A[2*iter+1])){
+            if(p->A[2*iter]<p->A[2*iter+1]){
+                swap(&p->A[iter], & p->A[2,iter]);
+                iter = 2*iter;
+            }else{
+                swap(&p->A[iter], & p->A[2*iter+1]);
+                iter = 2*iter+1;
+            }
+        }
+        return key;
+    }
+}
+
 int main(){
     pqueue p;
     initialize(&p);
@@ -47,6 +77,9 @@ int main(){
     insert(&p,34);
     insert(&p,9);
     insert(&p,23);
+    delete(&p);
+    delete(&p);
+    delete(&p);
     print(&p);
 
 }
