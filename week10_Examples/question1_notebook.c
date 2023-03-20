@@ -1,4 +1,4 @@
-//Question: Write a function substract min that substructs thhe smallest node value from
+//Question: Write a function substract min that substructs the smallest node value from
 //all nodes (including itselfs) in the linked list. Suppose the list stores the following elements.
 //[8,4,7,2,9,4,5,3] 
 //If you made the call of substract mih(head) the list would then store the elements:
