@@ -30,7 +30,7 @@ int main(){
 	root -> x = 500;
 	int i = 0;
 	
-	for(i=0;i<5;i++){
+	for(i=0;i<7;i++){
 		ekle(root, i*10);
 	}
 	bastir(root);

@@ -41,13 +41,13 @@ BTREE *insert(BTREE *root, int x){
 int main(){
     BTREE *root = NULL;
     int x;
-    printf("Deger giriniz: ");
+    printf("Enter the value: (For exit press -1) ");
     scanf("%d", &x);
 
     while(x != -1){
         
         root = insert(root, x);
-        printf("Deger giriniz: ");
+        printf("Enter the value: ");
         scanf("%d", &x);
     }
     inorder(root);
