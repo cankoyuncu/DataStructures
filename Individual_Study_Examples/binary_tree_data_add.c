@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <conio.h>
 
 struct node {
 	int data;
@@ -54,8 +55,9 @@ int main(){
 	BTREE *myroot = NULL;
 	int i = 0;
 	do {
-		printf("Agaca eklemek istediginiz sayiyi giriniz: ");
+		printf("Please enter number you want to add to the tree: ");
 		scanf("%d", &i);
+		
 		if(i != -1)
 			myroot = insert(myroot, i);
 	}while(i != -1);
@@ -64,6 +66,7 @@ int main(){
 	inorder(myroot);
 	printf("\n");
 	postorder(myroot);
-	getch();
+	
 	return 0;
+	getch();
 }
