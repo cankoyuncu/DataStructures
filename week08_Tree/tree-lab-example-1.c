@@ -9,7 +9,7 @@ struct node{
 typedef struct node BTREE;
 
 
-//leaf sayýsýný
+//leaf sayisi
 
 int leafCount(BTREE *node){
 	if(node==NULL)
@@ -39,7 +39,7 @@ BTREE *insert(BTREE *root,int data){
 	
 }
 
-//düðümlerin datalarýnýn toplamýný
+//dï¿½ï¿½ï¿½mlerin datalarï¿½nï¿½n toplamï¿½nï¿½
 
 int sumBTREE(BTREE *root){
 	if(root==NULL)
@@ -48,14 +48,14 @@ int sumBTREE(BTREE *root){
 }
 
 
-//agactaki herhangi bir düðümün depth
+//agactaki herhangi bir dï¿½ï¿½ï¿½mï¿½n depth
 
 int find_depth(BTREE *root, int data){
 	if(root==NULL){
 		printf("there is no %d\n",data);
 		return -1000;
 	}
-	if(root->data==data)  // kök düðümünün derinliði 0 
+	if(root->data==data)  // kï¿½k dï¿½ï¿½ï¿½mï¿½nï¿½n derinliï¿½i 0 
 		return 0;
 	else if(data < root->data)
 		return 1+ find_depth(root->left,data);
@@ -64,7 +64,7 @@ int find_depth(BTREE *root, int data){
 	
 }
 
-//agacýn yüsseklðini bulduran fonk. 
+//agacï¿½n yï¿½sseklï¿½ini bulduran fonk. 
 int tree_height(BTREE *root){
 	if(!root)
 		return -1;
