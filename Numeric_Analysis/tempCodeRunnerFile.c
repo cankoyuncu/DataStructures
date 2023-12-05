@@ -19,15 +19,14 @@ float determinant(float matrix[MATRIX_BOYUTU][MATRIX_BOYUTU], int size){
             m=0;
             n=0;
             for(i=0; i<size; i++){
-
                 for(j=0; j<size; j++){
-
                     b[i][j] = 0;
                     if(i!=0 && j !=c ){
                         b[m][n] = matrix[i][j];
                         if(n<(size-2)){
                             n++;
                         }
+                        ,
                         else{
                             n=0;
                             m++;
@@ -45,11 +44,11 @@ float determinant(float matrix[MATRIX_BOYUTU][MATRIX_BOYUTU], int size){
 int main(){
     int n = MATRIX_BOYUTU;
     float matrix[MATRIX_BOYUTU][MATRIX_BOYUTU] = {
-        {1, 2, 3, 4, 1},
-        {0, -1, 2, 4, 2},
-        {0, 0, 4, 0, 0},
-        {-3, -6, -9, -12, 4},
-        {0, 0, 1, 1, 1}
+        {1, 2, 3, 4, 5},
+        {6, 7, 8, 9, 10},
+        {11, 12, 13, 14, 15},
+        {16, 17, 18, 19, 20},
+        {21, 22, 23, 24, 25}
     };
 
     float result = determinant(matrix, n);
