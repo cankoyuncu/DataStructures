@@ -25,12 +25,12 @@ float determinant(float matrix[MATRIX_BOYUTU][MATRIX_BOYUTU], int size){
 
                     //mevcut sutun ve ilk satır haric tutularak alt matrisimiz b olusturulur.
                     b[i][j] = 0;
-                    if(i!=0 && j !=c ){
+                    if(i!=0 && j !=c ){ //ilgili eleman ilk satırda mı ve c sutununda mı kontrolu
                         b[m][n] = matrix[i][j];
-                        if(n<(size-2)){
+                        if(n<(size-2)){ //n sutununun indeksinin artmasi ilk boyut ve 1-1 b alt matrisine dahil edilmesini saglar
                             n++;
                         }
-                        else{
+                        else{ //b alt matrisinin bir sonraki satira gecmesini saglar
                             n=0;
                             m++;
                         }
@@ -54,7 +54,7 @@ int main(){
         {0, 0, 1, 1, 1}
     };
     //Determinant daha sonra determinant fonksiyonu kullanılarak hesaplanır 
-    //ve sonuç yazdırılır.
+    //ve sonuc yazdırılır.
     float result = determinant(matrix, n);
     printf("Matrisin determinanti: %f", result);
 
